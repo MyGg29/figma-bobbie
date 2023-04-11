@@ -1,0 +1,276 @@
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+  <style>
+    html,
+    body {
+      background-color: #171717;
+      color: white;
+      font-family: 'Poppins', sans-serif !important;
+    }
+
+    body {
+      padding-top: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .color-logo {
+      color: #30EABD
+    }
+
+    .button {
+      background-color: #343434;
+      border-radius: 15px;
+      font-size: 11px;
+      font-weight: 300;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 13px;
+      padding-right: 13px;
+      color: white;
+      border: none;
+      font-family: 'Poppins' !important;
+	  cursor: pointer;
+    }
+
+    #freePrompt {
+      color:white;
+      height: 60px;
+      padding: 20px;
+      background-color: #171717;
+      width: 100%;
+      font-size: 11px;
+    }
+
+    .button-group-1 {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .button-group-1>div {
+      margin-right: 8px;
+    }
+
+    .button-group-2 {
+      display: flex;
+    }
+
+    .button-group>div {
+      width: 100%;
+    }
+
+    .clicked {
+      border: 2px solid #30EABD;
+      padding: 8 13 8 13;
+    }
+
+    .clicked:before {
+      content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDExIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMCAxTDUuNTM4MzIgNy4xNjkyNEM1LjIwODk1IDcuNjI0NjYgNC41NjkwNSA3LjcxOTI4IDQuMTIxOTggNy4zNzg2NUwxIDUiIHN0cm9rZT0iIzMwRUFCRCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==');
+      padding-right: 7px;
+      color: #30EABD;
+    }
+
+    .title {
+      margin-bottom: 30px;
+    }
+    .subtitle {
+      font-size: 10px;
+    }
+
+    .answer-label {
+      color: #F34DA1;
+      font-size: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      display:flex;
+      flex-direction: row;
+      align-items:center;
+      justify-items: center;
+    }
+    #answer-content {
+      font-size: 11px;
+      font-weight: 300;
+    }
+    .d-none {
+      display: none;
+    }
+    .free-search-box {
+      display: flex;
+      border: 2px solid #343434;
+      border-radius: 15px;
+      padding: 0;
+      margin-top: 10px;
+    }
+    .free-search-box:focus {
+      border: 2px solid #A3A3A3;
+    }
+    .free-search-box input {
+      flex: 1;
+      padding: 30px 20px;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border:none;
+    }
+    .free-search-box input:focus {
+      outline: none;
+    }
+    .free-search-box button {
+      border-style: none;
+      padding: 0;
+      background-color: #171717;
+      margin-right: 10px;
+	  cursor: pointer;
+    }
+    .free-search-box button svg {
+      border-radius: 15px;
+      background-color: #F34DA1;
+      padding: 10px 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">
+      <div>
+        <svg width="99" height="22" viewBox="0 0 99 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_20_711)">
+            <path
+              d="M56.2042 21.4485V0H61.1623V6.6366C62.4768 5.2732 64.1499 4.81186 65.8814 4.81186C70.1809 4.81186 74.1245 7.94072 74.1245 13.3041C74.1245 18.2603 70.8687 22 65.7619 22C63.7595 22 61.7598 21.1005 61.0136 19.7397H60.9525V21.4485H56.2042ZM69.1664 13.3918C69.1664 10.3531 65.7486 7.72165 61.8023 10.4433C59.7442 14.134 61.8368 17.5077 65.013 17.5077C67.342 17.5077 69.1638 15.7113 69.1638 13.3918H69.1664Z"
+              fill="white" />
+            <path
+              d="M75.4072 3.65206V0H80.3653V3.65206H75.4072ZM75.4072 21.4485V5.36083H80.3653V21.4459H75.4072V21.4485Z"
+              fill="white" />
+            <path
+              d="M86.4574 14.8686C86.7256 16.6933 88.3083 17.9124 90.3399 17.9124C91.6837 17.9124 92.5494 17.4201 93.3567 16.4047H98.4343C96.8516 19.9124 93.8347 21.9691 90.3399 21.9691C85.5624 21.9691 81.5603 18.2294 81.5603 13.4485C81.5603 8.66756 85.3818 4.81189 90.2523 4.81189C95.1227 4.81189 99.0026 8.60828 99.0026 13.5928C99.0026 14.0567 98.9734 14.433 98.8831 14.8686H86.46H86.4574ZM94.0419 11.6212C93.6542 9.96911 92.1617 8.86859 90.2496 8.86859C88.4571 8.86859 86.9035 9.91241 86.5158 11.6212H94.0419Z"
+              fill="white" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M9.67719 4.81186C7.94571 4.81186 6.27265 5.27577 4.9581 6.6366V0H0V21.4485H4.7483V19.7397H4.80938C5.55562 21.1031 7.55798 22 9.55769 22C14.6645 22 17.9203 18.2603 17.9203 13.3041C17.9203 7.9433 13.9793 4.81186 9.67719 4.81186ZM8.81145 17.5077C5.63529 17.5077 3.54264 14.134 5.60077 10.4433C9.54706 7.72165 12.9649 10.3531 12.9649 13.3918C12.9649 15.7113 11.1431 17.5077 8.8141 17.5077H8.81145ZM37.3013 21.4485V0H42.2594V6.6366C43.5739 5.2732 45.247 4.81186 46.9785 4.81186C51.278 4.81186 55.2216 7.94072 55.2216 13.3041C55.2216 18.2603 51.9658 22 46.859 22C44.8592 22 42.8569 21.1005 42.1107 19.7397H42.0496V21.4485H37.3013ZM50.2635 13.3918C50.2635 10.3531 46.8457 7.72165 42.8994 10.4433C40.8412 14.134 42.9339 17.5077 46.1101 17.5077C48.4391 17.5077 50.2608 15.7113 50.2608 13.3918H50.2635ZM34.4411 2.82733C34.7253 4.60826 34.8926 6.36857 34.9563 8.14176C35.8194 9.47682 36.3213 11.0567 36.3213 12.7474C36.3213 17.5464 32.298 21.4485 27.3559 21.4485C26.036 21.4485 24.9658 20.4098 24.9658 19.1289C24.9658 17.8479 26.036 16.8093 27.3559 16.8093C29.6636 16.8093 31.5412 14.9871 31.5412 12.7474C31.5412 10.5077 29.6636 8.68558 27.3559 8.68558C25.0481 8.68558 23.1706 10.5077 23.1706 12.7474C23.1706 14.0284 22.1003 15.067 20.7805 15.067C19.4606 15.067 18.3904 14.0284 18.3904 12.7474C18.3904 11.0516 18.8923 9.47166 19.7607 8.13145C19.8297 6.40981 19.9944 4.70104 20.2706 2.96908C21.7498 3.40723 23.1785 3.90723 24.5834 4.47424C25.4571 4.19847 26.3892 4.0464 27.3559 4.0464C28.2508 4.0464 29.1166 4.17785 29.9318 4.41496C31.3978 3.81444 32.8902 3.28609 34.4411 2.82733Z"
+              fill="#30EABD" />
+          </g>
+          <defs>
+            <clipPath id="clip0_20_711">
+              <rect width="99" height="22" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+      <div class="subtitle">
+        l'assitant.e pour ronronner !
+      </div>
+    </div>
+    <div>
+      <div class="button-group-1">
+        <div>
+          <button class="button" id="jokeBut" onclick="radioChange('joke')">Fais moi rire 🤣</button>
+        </div>
+        <div>
+          <button class="button" id="zenBut" onclick="radioChange('zen')">Détend-moi 🏝</button>
+        </div>
+      </div>
+      <div class="button-group-2">
+        <div>
+          <button class="button" id="flatterBut" onclick="radioChange('flatter')">Flatte-moi 💋</button>
+        </div>
+      </div>
+      <div class="free-search-box" id="freeSearch">
+        <input id="freePrompt" type="text" onfocus="focusFreeSearch()" placeholder="Que veux tu demander à bobbie ?" onkeyup="freePromptChange(this)">
+        <button onclick="sendFreePrompt()">
+          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.548 5.66092C5.548 4.39318 4.51977 3.36517 3.2518 3.36517C1.98383 3.36517 0.956055 4.39318 0.956055 5.66092C0.956055 6.92956 1.9836 7.95712 3.2518 7.95712C4.51999 7.95712 5.548 6.92956 5.548 5.66092Z" fill="white"/>
+          <path d="M14.704 3.81366C13.4363 3.81366 12.4083 4.84166 12.4083 6.1094C12.4083 7.37805 13.4363 8.40515 14.704 8.40515C15.972 8.40515 17 7.37805 17 6.1094C17 4.84166 15.9722 3.81366 14.704 3.81366Z" fill="white"/>
+          <path d="M12.6188 8.66501C12.4592 8.46828 12.2333 8.24054 11.9738 8.00171C11.2816 7.10455 10.1988 6.52411 8.97813 6.52411C7.89172 6.52411 6.91511 6.98412 6.22487 7.71714C5.83277 8.0583 5.48414 8.39131 5.26229 8.66523L5.11378 8.84657C4.42105 9.6912 3.55876 10.7421 3.5651 12.5253C3.57121 14.1813 4.91977 15.5294 6.571 15.5294C7.51411 15.5294 8.37844 15.0934 8.94055 14.3615C9.5022 15.0934 10.3668 15.5294 11.3108 15.5294C12.9613 15.5294 14.3097 14.1815 14.316 12.5253C14.3223 10.7421 13.4598 9.6912 12.7673 8.84657L12.6188 8.66501Z" fill="white"/>
+          <path d="M9.13728 5.05965C10.5345 5.05965 11.6671 3.92701 11.6671 2.52982C11.6671 1.13264 10.5345 0 9.13728 0C7.74009 0 6.60745 1.13264 6.60745 2.52982C6.60745 3.92701 7.74009 5.05965 9.13728 5.05965Z" fill="white"/>
+          </svg>
+        </button>
+      </div>
+
+      <div>
+        <div class="answer-label">
+          <span>
+            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8.5" cy="8.5" r="8.5" fill="#F34DA1" />
+              <path
+                d="M12.3149 6.85398C12.2829 5.90173 12.1989 4.9564 12.0563 4C11.2778 4.24637 10.5287 4.5301 9.79295 4.85259C9.38374 4.72526 8.9492 4.65467 8.5 4.65467C8.01481 4.65467 7.54695 4.73633 7.10841 4.88443C6.40329 4.57993 5.68617 4.31142 4.94372 4.07612C4.8051 5.00623 4.72245 5.92388 4.6878 6.84844C4.25193 7.56817 4 8.41661 4 9.32734C4 10.0152 4.53717 10.573 5.19964 10.573C5.86211 10.573 6.39929 10.0152 6.39929 9.32734C6.39929 8.12457 7.34168 7.14602 8.5 7.14602C9.65832 7.14602 10.6007 8.12457 10.6007 9.32734C10.6007 10.5301 9.65832 11.5087 8.5 11.5087C7.83753 11.5087 7.30036 12.0664 7.30036 12.7543C7.30036 13.4422 7.83753 14 8.5 14C10.9806 14 13 11.9045 13 9.32734C13 8.41938 12.7481 7.57093 12.3149 6.85398Z"
+                fill="black" />
+              <path d="M16.7594 16.6568L11.7637 15.2274L15.4995 11.6158L16.7594 16.6568Z" fill="#F34DA1" />
+            </svg>
+          </span>
+          <span id="bobbieIsTyping" class="d-none">
+            <i>
+              bobbie est en train d'écrire...
+            </i>
+          </span>
+          <span id="bobbieanswer">
+            Réponse de bobbie :
+          </span>
+        </div>
+        <div id="answer-content">...</div>
+      </div>
+    </div>
+    <div>
+
+    </div>
+  </div>
+  <script>
+    function focusFreeSearch() {
+      document.getElementById("freeSearch").focus()
+    }
+    function radioChange(type) {
+      updateButtonStyle(type)
+      postMessage({
+        generateQuote: {
+          type: type,
+        }
+      })
+    }
+    function postMessage(message) {
+      bobbieIsTyping()
+      clearAnswer()
+      window.parent.postMessage({
+        pluginMessage: message
+      }, "*")
+    }
+    function clearAnswer() {
+      document.querySelector("#answer-content").innerHTML = ""
+    }
+    function freePromptChange(el) {
+      if(event.keyCode === 13) {
+        sendFreePrompt()
+      }
+    }
+	function sendFreePrompt() {
+		const customPrompt = document.querySelector("#freePrompt").value
+        postMessage({
+          generateQuote: {
+            type: 'free',
+            freePrompt: customPrompt
+          }
+        })
+	}
+    function updateButtonStyle(type) {
+      document.querySelectorAll("button").forEach(el => el.classList.remove('clicked'))
+      document.querySelectorAll(`#${type}But`).forEach(el => el.classList.add('clicked'))
+    }
+    function bobbieIsTyping() {
+      document.querySelector("#bobbieIsTyping").classList.remove('d-none')
+      document.querySelector("#bobbieAnswer").classList.add('d-none')
+    }
+    function bobbieAnswered() {
+      document.querySelector("#bobbieIsTyping").classList.add('d-none')
+      document.querySelector("#bobbieAnswer").classList.remove('d-none')
+    }
+    onmessage = (event) => {
+      console.log("got this", event.data.pluginMessage)
+      bobbieAnswered()
+      document.querySelector("#answer-content").innerHTML = event.data.pluginMessage.text.choices[0].text.trim()
+    }
+  </script>
+</body>
+
+</html>
