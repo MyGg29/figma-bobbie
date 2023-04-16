@@ -1,0 +1,125 @@
+html,
+body {
+  background-color: #171717;
+  color: white;
+  font-family: "Poppins", sans-serif !important;
+}
+
+body {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.color-logo {
+  color: #30eabd;
+}
+
+.button {
+  background-color: #343434;
+  border-radius: 15px;
+  font-size: 11px;
+  font-weight: 300;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 13px;
+  padding-right: 13px;
+  color: white;
+  border: none;
+  font-family: "Poppins" !important;
+  cursor: pointer;
+}
+
+#freePrompt {
+  color: white;
+  height: 60px;
+  padding: 20px;
+  background-color: #171717;
+  width: 100%;
+  font-size: 11px;
+}
+
+.button-group-1 {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.button-group-1 > div {
+  margin-right: 8px;
+}
+
+.button-group-2 {
+  display: flex;
+}
+
+.button-group > div {
+  width: 100%;
+}
+
+.clicked {
+  border: 2px solid #30eabd;
+  padding: 8 13 8 13;
+}
+
+.clicked:before {
+  content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDExIDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMCAxTDUuNTM4MzIgNy4xNjkyNEM1LjIwODk1IDcuNjI0NjYgNC41NjkwNSA3LjcxOTI4IDQuMTIxOTggNy4zNzg2NUwxIDUiIHN0cm9rZT0iIzMwRUFCRCIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==");
+  padding-right: 7px;
+  color: #30eabd;
+}
+
+.title {
+  margin-bottom: 30px;
+}
+.subtitle {
+  font-size: 10px;
+}
+
+.answer-label {
+  color: #f34da1;
+  font-size: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+}
+#answer-content {
+  font-size: 11px;
+  font-weight: 300;
+}
+.d-none {
+  display: none;
+}
+.free-search-box {
+  display: flex;
+  border: 2px solid #343434;
+  border-radius: 15px;
+  padding: 0;
+  margin-top: 10px;
+}
+.free-search-box:focus {
+  border: 2px solid #a3a3a3;
+}
+.free-search-box input {
+  flex: 1;
+  padding: 30px 20px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border: none;
+}
+.free-search-box input:focus {
+  outline: none;
+}
+.free-search-box button {
+  border-style: none;
+  padding: 0;
+  background-color: #171717;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.free-search-box button svg {
+  border-radius: 15px;
+  background-color: #f34da1;
+  padding: 10px 13px;
+}

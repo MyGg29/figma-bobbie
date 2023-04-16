@@ -8,5 +8,8 @@
   "editorType": [
     "figma"
   ],
-  "ui": "ui.html"
+  "ui": {
+    "main": "ui.html",
+    "settings": "settings.html"
+  }
 }
