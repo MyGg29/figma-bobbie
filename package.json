@@ -1,7 +1,7 @@
 {
-  "name": "fig-gpt-plug",
+  "name": "bobbie",
   "version": "1.0.0",
-  "description": "Your Figma Plugin",
+  "description": "Boobie, l'assistant pour bosser en mode ronron",
   "main": "code.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
