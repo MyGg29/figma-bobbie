@@ -27,10 +27,10 @@
     }
 
     .subtitle {
-    font-size: 12px;
-    margin-top: 5px;
-    font-weight: 300;
-}
+      font-size: 12px;
+      margin-top: 5px;
+      font-weight: 300;
+    }
 
     .settings {
       display: flex;
@@ -64,7 +64,7 @@
       size: 11px;
       margin-bottom: 25px;
       font-style: 'Poppins';
-  	  cursor: pointer;
+      cursor: pointer;
       width: 100%;
       border: none;
     }
@@ -88,28 +88,42 @@
       padding: 0;
       font-size: 13px;
     }
+
     .go-back-div {
-    bottom: 10px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    margin-left: 5px;
-    font-size: 12px;
-    font-weight: 300;
-    border: 2px solid #343434;
-    padding: 8px;
-    border-radius: 13px;
-    width: fit-content;
-    position: fixed;
-    background-color: #2e2e2e;
+      bottom: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin-left: 5px;
+      font-size: 12px;
+      font-weight: 300;
+      border: 2px solid #343434;
+      padding: 8px;
+      border-radius: 13px;
+      width: fit-content;
+      position: fixed;
+      background-color: #2e2e2e;
     }
 
 
     .go-back-div:hover {
-    transform: translateY(-3px);
-    border-color: #30EABD;
-    } 
+      transform: translateY(-3px);
+      border-color: #30EABD;
+    }
 
+    .hidden {
+      display: none
+    }
+
+    .save-success {
+      font-size: 12px;
+      color: #30EABD;
+      text-align: center;
+    }
+
+    .openai-link {
+      color: #6f6fff;
+    }
   </style>
 </head>
 
@@ -120,21 +134,30 @@
       <div>
         <svg width="120" height="27" viewBox="0 0 120 27" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_1_60)">
-          <path d="M68.1263 26.3231V3.05176e-05H74.1361V8.14495C75.7295 6.47168 77.7574 5.90549 79.8562 5.90549C85.0677 5.90549 89.8479 9.74546 89.8479 16.3278C89.8479 22.4104 85.9014 27 79.7114 27C77.2843 27 74.8604 25.8961 73.9558 24.226H73.8818V26.3231H68.1263ZM83.8381 16.4354C83.8381 12.7061 79.6953 9.4766 74.9119 12.8168C72.4172 17.3463 74.9537 21.4868 78.8036 21.4868C81.6266 21.4868 83.8349 19.2821 83.8349 16.4354H83.8381Z" fill="white"/>
-          <path d="M91.4027 4.48211V3.05176e-05H97.4125V4.48211H91.4027ZM91.4027 26.3231V6.57922H97.4125V26.32H91.4027V26.3231Z" fill="white"/>
-          <path d="M104.797 18.2478C105.122 20.4873 107.04 21.9834 109.503 21.9834C111.132 21.9834 112.181 21.3792 113.16 20.133H119.314C117.396 24.4379 113.739 26.9621 109.503 26.9621C103.712 26.9621 98.861 22.3725 98.861 16.5049C98.861 10.6374 103.493 5.90549 109.397 5.90549C115.3 5.90549 120.003 10.5647 120.003 16.6821C120.003 17.2514 119.968 17.7132 119.858 18.2478H104.8H104.797ZM113.99 14.2623C113.52 12.2348 111.711 10.8842 109.393 10.8842C107.221 10.8842 105.338 12.1652 104.868 14.2623H113.99Z" fill="white"/>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M11.7299 5.90546C9.63116 5.90546 7.60321 6.47481 6.00982 8.14492V0H0V26.3231H5.75552V24.226H5.82956C6.73409 25.8992 9.16119 27 11.5851 27C17.7752 27 21.7216 22.4104 21.7216 16.3278C21.7216 9.74859 16.9447 5.90546 11.7299 5.90546ZM10.6805 21.4868C6.83066 21.4868 4.29411 17.3463 6.78881 12.8168C11.5722 9.47657 15.715 12.7061 15.715 16.4353C15.715 19.2821 13.5068 21.4868 10.6838 21.4868H10.6805ZM45.2137 26.3231V0H51.2235V8.14492C52.8169 6.47165 54.8448 5.90546 56.9436 5.90546C62.1551 5.90546 66.9353 9.74543 66.9353 16.3278C66.9353 22.4104 62.9888 27 56.7987 27C54.3748 27 51.9477 25.8961 51.0432 24.226H50.9692V26.3231H45.2137ZM60.9255 16.4353C60.9255 12.7061 56.7826 9.47657 51.9992 12.8168C49.5045 17.3463 52.0411 21.4868 55.891 21.4868C58.714 21.4868 60.9222 19.2821 60.9222 16.4353H60.9255ZM41.7468 3.46991C42.0913 5.65559 42.2941 7.81597 42.3713 9.99217C43.4175 11.6306 44.0259 13.5696 44.0259 15.6446C44.0259 21.5342 39.1491 26.3231 33.1586 26.3231C31.5588 26.3231 30.2615 25.0484 30.2615 23.4764C30.2615 21.9043 31.5588 20.6296 33.1586 20.6296C35.9559 20.6296 38.2317 18.3933 38.2317 15.6446C38.2317 12.8959 35.9559 10.6596 33.1586 10.6596C30.3613 10.6596 28.0855 12.8959 28.0855 15.6446C28.0855 17.2166 26.7883 18.4913 25.1884 18.4913C23.5886 18.4913 22.2914 17.2166 22.2914 15.6446C22.2914 13.5633 22.8998 11.6243 23.9524 9.97951C24.0361 7.86658 24.2356 5.76946 24.5704 3.64388C26.3634 4.1816 28.0952 4.79524 29.798 5.49111C30.857 5.15266 31.9869 4.96604 33.1586 4.96604C34.2434 4.96604 35.2928 5.12736 36.281 5.41836C38.0579 4.68136 39.8669 4.03293 41.7468 3.46991Z" fill="url(#paint0_linear_1_60)"/>
+            <path
+              d="M68.1263 26.3231V3.05176e-05H74.1361V8.14495C75.7295 6.47168 77.7574 5.90549 79.8562 5.90549C85.0677 5.90549 89.8479 9.74546 89.8479 16.3278C89.8479 22.4104 85.9014 27 79.7114 27C77.2843 27 74.8604 25.8961 73.9558 24.226H73.8818V26.3231H68.1263ZM83.8381 16.4354C83.8381 12.7061 79.6953 9.4766 74.9119 12.8168C72.4172 17.3463 74.9537 21.4868 78.8036 21.4868C81.6266 21.4868 83.8349 19.2821 83.8349 16.4354H83.8381Z"
+              fill="white" />
+            <path
+              d="M91.4027 4.48211V3.05176e-05H97.4125V4.48211H91.4027ZM91.4027 26.3231V6.57922H97.4125V26.32H91.4027V26.3231Z"
+              fill="white" />
+            <path
+              d="M104.797 18.2478C105.122 20.4873 107.04 21.9834 109.503 21.9834C111.132 21.9834 112.181 21.3792 113.16 20.133H119.314C117.396 24.4379 113.739 26.9621 109.503 26.9621C103.712 26.9621 98.861 22.3725 98.861 16.5049C98.861 10.6374 103.493 5.90549 109.397 5.90549C115.3 5.90549 120.003 10.5647 120.003 16.6821C120.003 17.2514 119.968 17.7132 119.858 18.2478H104.8H104.797ZM113.99 14.2623C113.52 12.2348 111.711 10.8842 109.393 10.8842C107.221 10.8842 105.338 12.1652 104.868 14.2623H113.99Z"
+              fill="white" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M11.7299 5.90546C9.63116 5.90546 7.60321 6.47481 6.00982 8.14492V0H0V26.3231H5.75552V24.226H5.82956C6.73409 25.8992 9.16119 27 11.5851 27C17.7752 27 21.7216 22.4104 21.7216 16.3278C21.7216 9.74859 16.9447 5.90546 11.7299 5.90546ZM10.6805 21.4868C6.83066 21.4868 4.29411 17.3463 6.78881 12.8168C11.5722 9.47657 15.715 12.7061 15.715 16.4353C15.715 19.2821 13.5068 21.4868 10.6838 21.4868H10.6805ZM45.2137 26.3231V0H51.2235V8.14492C52.8169 6.47165 54.8448 5.90546 56.9436 5.90546C62.1551 5.90546 66.9353 9.74543 66.9353 16.3278C66.9353 22.4104 62.9888 27 56.7987 27C54.3748 27 51.9477 25.8961 51.0432 24.226H50.9692V26.3231H45.2137ZM60.9255 16.4353C60.9255 12.7061 56.7826 9.47657 51.9992 12.8168C49.5045 17.3463 52.0411 21.4868 55.891 21.4868C58.714 21.4868 60.9222 19.2821 60.9222 16.4353H60.9255ZM41.7468 3.46991C42.0913 5.65559 42.2941 7.81597 42.3713 9.99217C43.4175 11.6306 44.0259 13.5696 44.0259 15.6446C44.0259 21.5342 39.1491 26.3231 33.1586 26.3231C31.5588 26.3231 30.2615 25.0484 30.2615 23.4764C30.2615 21.9043 31.5588 20.6296 33.1586 20.6296C35.9559 20.6296 38.2317 18.3933 38.2317 15.6446C38.2317 12.8959 35.9559 10.6596 33.1586 10.6596C30.3613 10.6596 28.0855 12.8959 28.0855 15.6446C28.0855 17.2166 26.7883 18.4913 25.1884 18.4913C23.5886 18.4913 22.2914 17.2166 22.2914 15.6446C22.2914 13.5633 22.8998 11.6243 23.9524 9.97951C24.0361 7.86658 24.2356 5.76946 24.5704 3.64388C26.3634 4.1816 28.0952 4.79524 29.798 5.49111C30.857 5.15266 31.9869 4.96604 33.1586 4.96604C34.2434 4.96604 35.2928 5.12736 36.281 5.41836C38.0579 4.68136 39.8669 4.03293 41.7468 3.46991Z"
+              fill="url(#paint0_linear_1_60)" />
           </g>
           <defs>
-          <linearGradient id="paint0_linear_1_60" x1="60.3956" y1="7.11618e-07" x2="48.8981" y2="39.026" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#14FFC7"/>
-          <stop offset="1" stop-color="#5EDDF9"/>
-          </linearGradient>
-          <clipPath id="clip0_1_60">
-          <rect width="120" height="27" fill="white"/>
-          </clipPath>
+            <linearGradient id="paint0_linear_1_60" x1="60.3956" y1="7.11618e-07" x2="48.8981" y2="39.026"
+              gradientUnits="userSpaceOnUse">
+              <stop stop-color="#14FFC7" />
+              <stop offset="1" stop-color="#5EDDF9" />
+            </linearGradient>
+            <clipPath id="clip0_1_60">
+              <rect width="120" height="27" fill="white" />
+            </clipPath>
           </defs>
-          </svg>    
+        </svg>
       </div>
       <div class="subtitle">
         Bosse en mode "ronron" !
@@ -144,13 +167,16 @@
   <div class="settings">
     <label for="api-key" class="label">Entrez votre clé API chatGPT</label>
     <input id="api-key" class="input-key" type="text" placeholder="Chat gpt api key">
+    <span id="save-success-popup" class="hidden save-success">Clée sauvegardé !</span>
     <button class="saveButton" onclick="saveSettings()">Valider</button>
     <div class="help">
       <span class="help-header">
         Comment récupérer ma clé ?
       </span>
       <ul class="help-list">
-        <li>S'identifier sur ChatGPT</li>
+        <li>S'identifier sur le portail <a class="openai-link" target="_blank"
+            href="https://flatform.openai.com/overview">OpenAI</a></li>
+        <li>Dans "View API keys"</li>
         <li>Cliquer sur "Create New secret key"</li>
         <li>Copier et coller votre clé personnelle ici</li>
       </ul>
@@ -175,13 +201,28 @@
     }, "*")
   }
   function saveSettings() {
-    window.parent.postMessage({
-      pluginMessage: {
-        settings: {
-          apiKey: document.getElementById("api-key").value
+    try {
+      window.parent.postMessage({
+        pluginMessage: {
+          settings: {
+            apiKey: document.getElementById("api-key").value
+          }
         }
-      }
-    }, "*")
+      }, "*")
+    } catch (e) {
+    } finally {
+      showSaveSuccessPopup()
+      setTimeout(() => {
+        hideSaveSuccessPopup()
+      }, 2000)
+    }
+
+  }
+  function hideSaveSuccessPopup() {
+    document.getElementById("save-success-popup").classList.add("hidden");
+  }
+  function showSaveSuccessPopup() {
+    document.getElementById("save-success-popup").classList.remove("hidden");
   }
 
 </script>
