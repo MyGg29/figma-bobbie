@@ -12,6 +12,13 @@ figma.showUI(__uiFiles__.main, {
   height: DEFAULT_HEIGHT,
   width: DEFAULT_WIDTH,
 });
+figma.clientStorage.getAsync("settings").then(settings => {
+  if(!settings.apiKey) {
+    figma.ui.postMessage({
+      error: 1
+    })
+  }
+})
 
 // Calls to "parent.postMessage" from within the HTML page will trigger this
 // callback. The callback will be passed the "pluginMessage" property of the
