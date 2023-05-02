@@ -375,7 +375,11 @@
       const answerContent = document.querySelector("#answer-content");
       if(event.data.pluginMessage.text) {
         bobbieAnswered()
-        answerContent.innerHTML = event.data.pluginMessage.text.choices[0].text.trim()
+        try {
+          answerContent.innerHTML = event.data.pluginMessage.text.choices[0].text.trim()
+        } catch(e) {
+          answerContent.innerHTML = event.data.pluginMessage.text.error.message
+        }
       } 
       if(event.data.pluginMessage.error === 1) {
         answerContent.innerHTML = "Aucune clée API n'est sauvegardée, allez dans les paramètres pour utiliser le plugin"
